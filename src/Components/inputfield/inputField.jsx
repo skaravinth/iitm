@@ -67,7 +67,7 @@ const InputField = ({
 			/>
 
 			{/* Error Message */}
-			{error && <p className="text-red-500 text-xs flex flex-col mt-1">This field is required</p>}
+			{/* {error && <p className="text-red-500 text-xs flex flex-col mt-1">This field is required</p>} */}
 		</div>
 	);
 };
