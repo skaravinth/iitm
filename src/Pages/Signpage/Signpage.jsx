@@ -67,7 +67,7 @@ const SingFrom = () => {
           </div>
           <div onClick={handleSubmit}>
             <ButtonComponent
-            buttonText="Sing-up"
+            buttonText="Sing-up "
             bgColor="bg-blue-500"
             />
           </div>
