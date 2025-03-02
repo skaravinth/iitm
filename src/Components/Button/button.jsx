@@ -8,7 +8,6 @@ const ButtonComponent = ({
   buttonIcon = '',
   iconClassName = '',
   radius,
-	backGroundColor,
   textClassName = '',
   isIcon = true,
   baseClassName = '',
@@ -48,3 +47,5 @@ const ButtonComponent = ({
 };
 
 export default ButtonComponent;
+
+

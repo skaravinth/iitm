@@ -45,8 +45,10 @@ function AiModel() {
   
     // Retrieve user data from localStorage
     const userData = JSON.parse(localStorage.getItem("userData"));
-    const userId = userData?.id; // Assuming the user ID is stored as 'id'
+    const userId = userData?.user.id; // Assuming the user ID is stored as 'id'
   
+    console.log(userData)
+    console.log(userId)
     if (!userId) {
       alert("User not found. Please log in again.");
       setLoading(false);
