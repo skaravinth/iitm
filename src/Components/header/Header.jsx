@@ -27,7 +27,7 @@ const Header = () => {
 <div className="text-black font-bold mr-5" onClick={() => navigate("/History")}>
   HISTORY
 </div>
-<div className="text-black font-bold mr-5" onClick={() => navigate("/Dashboard")}>
+<div className="text-black font-bold mr-5" onClick={() => navigate("/Feedback")}>
   FEEDBACK
 </div>
 <div className="text-black font-bold mr-5" onClick={() => navigate("/shopping")}>

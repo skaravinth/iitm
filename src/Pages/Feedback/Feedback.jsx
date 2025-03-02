@@ -125,7 +125,7 @@ const FeedbackForm = () => {
   };
 
   return (
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mt-10 mx-auto">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header */}
           <div className="bg-[#6B4F4F] px-6 py-8 text-white">
