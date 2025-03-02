@@ -8,7 +8,7 @@ import Dog4 from "../../assets/Dog4.jpg"
 const Page = () => {
  
     const bestSellers = [
-      { id: 1, name: "Premium Dog Food", category: "Food", price: 99.99, imageUrl: Dog1 },
+      { id: 1, name: "Premium Dog Food", category: "Foods", price: 99.99, imageUrl: Dog1 },
       { id: 2, name: "Chewy Bone Treats", category: "Snacks", price: 199.99, imageUrl: Dog2 },
       { id: 3, name: "Organic Dog Biscuits", category: "Food", price: 29.99, imageUrl: Dog3 },
       { id: 4, name: "Chicken Jerky Sticks", category: "Treats", price: 79.99, imageUrl: Dog4 },
@@ -18,7 +18,6 @@ const Page = () => {
       { id: 8, name: "Freeze-Dried Liver Bites", category: "Treats", price: 39.99, imageUrl: Dog4 }
     
       ];
-
 
   return (
     <div className=" min-h-screen">

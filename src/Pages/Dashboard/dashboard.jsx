@@ -3,8 +3,6 @@ import Dashboardimg from '../../assets/dashboard image.jpeg';
 import SubscriptionVsPaid from '../../Components/SubscriptionCaerd';
 import { useNavigate } from "react-router-dom";
 
-
-
 const Dashboard = () => {
   const navigate = useNavigate()
   return (
@@ -44,7 +42,6 @@ const Dashboard = () => {
       </div>
 
       <div>
-        
       </div>
       <div className='mt-10'>
       <SubscriptionVsPaid />

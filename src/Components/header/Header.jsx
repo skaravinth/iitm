@@ -24,8 +24,11 @@ const Header = () => {
       <div className="text-black font-bold mr-5" onClick={() => navigate("/Dashboard")}>
   HOME
 </div>
+<div className="text-black font-bold mr-5" onClick={() => navigate("/History")}>
+  HISTORY
+</div>
 <div className="text-black font-bold mr-5" onClick={() => navigate("/Dashboard")}>
-  ABOUT
+  FEEDBACK
 </div>
 <div className="text-black font-bold mr-5" onClick={() => navigate("/shopping")}>
   SHOPPING PAGE
