@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { SyncIcon } from '@exa/ui/assets';
+
 import { Button, cn } from '@heroui/react';
 
 const ButtonComponent = ({
@@ -48,3 +48,5 @@ const ButtonComponent = ({
 };
 
 export default ButtonComponent;
+
+
