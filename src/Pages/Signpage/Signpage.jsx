@@ -2,9 +2,8 @@ import { useState } from "react";
 import InputField from "../../Components/inputfield/inputField";
 import ButtonComponent from "../../Components/Button/button";
 import Dog from '../../assets/image.png'
-import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+const SingFrom = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
@@ -16,14 +15,26 @@ const LoginForm = () => {
     console.log({ email, password, remember });
   };
 
-const navigate = useNavigate()
-
   return (
     <div className="flex items-center justify-center h-screen bg-[#6B4F4F]">
       <div className="bg-[#6B4F4F] p-8 rounded-lg border-1  text-white w-230 justify-evenly flex">
      <div >
-     <h2 className="text-2xl font-bold text-center">Welcome back</h2>
-        <p className="text-center mb-6">Please enter your details</p>
+     <h2 className="text-2xl font-bold text-center">Sign-up</h2>
+     <div className="flex mt-10">
+          <div className="mb-4">
+            <div className="flex ">User name</div>
+           
+            <InputField
+              id="email"
+              placeholder="Enter your User name"
+              value={email}
+              isRequired={true} 
+              customPlaceholderStyle="bg-transparent outline-none"
+              type="email"
+              inputOnChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          </div>
         <div className="flex">
           <div className="mb-4">
             <div className="flex ">Email</div>
@@ -56,16 +67,11 @@ const navigate = useNavigate()
           </div>
           <div onClick={handleSubmit}>
             <ButtonComponent
-            buttonText="Log in"
+            buttonText="Sing-up"
             bgColor="bg-blue-500"
             />
           </div>
-        <div className="text-center mt-4">
-          Don't have an account?
-          <div className="text-blue-400" onClick={()=> navigate('Singpage')}>
-            Sign up
-          </div>
-        </div>
+       
         </div>
         <div >
             <img  src={Dog} className="w-120 h-100"/>
@@ -75,4 +81,4 @@ const navigate = useNavigate()
   );
 };
 
-export default LoginForm;
+export default SingFrom;
