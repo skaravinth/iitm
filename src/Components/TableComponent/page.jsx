@@ -43,7 +43,7 @@ const DogTable = () => {
       <table className="w-full border-collapse border border-gray-400">
         <thead>
           <tr className="bg-gray-200">
-            <th className="border p-2">ID</th>
+            <th className="border p-2">Id</th>
             <th className="border p-2">Breed</th>
             <th className="border p-2">Color</th>
             <th className="border p-2">User ID</th>

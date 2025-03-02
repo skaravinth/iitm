@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      {/* <Routers /> */}
-      <DogTable/>
+      <Routers />
+      {/* <DogTable/> */}
     </>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import Dashboardimg from '../../assets/dashboard image.jpeg';
+import SubscriptionVsPaid from '../../Components/SubscriptionCaerd';
+import DogTable from '../../Components/TableComponent/page';
 
 const Dashboard = () => {
   return (
@@ -43,7 +45,9 @@ const Dashboard = () => {
       </div>
 
       <div>
-        
+      </div>
+      <div className='mt-10'>
+      <SubscriptionVsPaid />
       </div>
     </div>
   );
