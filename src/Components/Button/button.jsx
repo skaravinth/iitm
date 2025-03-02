@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-
 import { Button, cn } from '@heroui/react';
 
 const ButtonComponent = ({
@@ -10,18 +9,20 @@ const ButtonComponent = ({
   buttonIcon = '',
   iconClassName = '',
   radius,
+	backGroundColor,
   textClassName = '',
   isIcon = true,
   baseClassName = '',
   bgColor,
   ButtonVariant = 'light',
+
   type,
   ...rest
 }) => {
   return (
     <Button
       className={cn(
-        'border border-content2-200 rounded-[0.37rem] gap-1 h-[2.5rem] w-[10rem] transition-colors',
+        'border border-content2-200 rounded-[0.37rem] gap-1 h-[2.5rem] w-[10rem] transition-colors ',
         bgColor
           ? `${bgColor} hover:!${bgColor} data-[hover=true]:!${bgColor}`
           : 'bg-background hover:!bg-background data-[hover=true]:!bg-background',
