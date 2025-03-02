@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use client';
 import { Input, Tooltip } from '@heroui/react';
 import { cn } from '@heroui/theme';
@@ -14,7 +15,6 @@ const InputField = ({
 	error = false,
 	disabled = false,
 	isRequired = false,
-	label = '',
 	variant = 'bordered',
 	customInputValueStyle = 'font-source text-content2-700',
 	inputWrapperClassName = '',
