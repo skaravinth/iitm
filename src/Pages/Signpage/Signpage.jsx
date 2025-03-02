@@ -2,18 +2,38 @@ import { useState } from "react";
 import InputField from "../../Components/inputfield/inputField";
 import ButtonComponent from "../../Components/Button/button";
 import Dog from '../../assets/image.png'
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SingFrom = () => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [phone_number, setPhonenumber] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
 
-  const handleSubmit = (e) => {
-    console.log(password)
-    console.log(email)
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ email, password, remember });
+    try {
+      const response = await axios.post("http://localhost:3000/signup", {
+        name,  
+        email,
+        password,
+        phone_number,
+      });
+  
+      console.log("Signup successful:", response.data);
+      alert("User registered successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Signup error:", error.response?.data || error.message);
+      alert(error.response?.data?.error || "Signup failed");
+    }
   };
+  
+  
 
   return (
     <div className="flex items-center justify-center h-screen bg-[#6B4F4F]">
@@ -25,13 +45,11 @@ const SingFrom = () => {
             <div className="flex ">User name</div>
            
             <InputField
-              id="email"
               placeholder="Enter your User name"
-              value={email}
-              isRequired={true} 
+              value={name}
+              className="w-70"
               customPlaceholderStyle="bg-transparent outline-none"
-              type="email"
-              inputOnChange={(e) => setEmail(e.target.value)}
+              inputOnChange={(e) => setName(e.target.value)}
             />
           </div>
           </div>
@@ -43,10 +61,22 @@ const SingFrom = () => {
               id="email"
               placeholder="Enter your email"
               value={email}
-              isRequired={true} 
+              className="w-70"
               customPlaceholderStyle="bg-transparent outline-none"
-              type="email"
               inputOnChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          </div>
+          <div className="flex">
+          <div className="mb-4">
+            <div className="flex ">Phone Number</div>
+           
+            <InputField
+              placeholder="Enter your Phone no"
+              className="w-70"
+              value={phone_number}
+              customPlaceholderStyle="bg-transparent outline-none"
+              inputOnChange={(e) => setPhonenumber(e.target.value)}
             />
           </div>
           </div>
@@ -56,7 +86,7 @@ const SingFrom = () => {
               id="password"
               placeholder="Enter your password"
               value={password}
-              className=""
+              className="w-70"
                customPlaceholderStyle="bg-transparent outline-none"
               isRequired={true}  
               type="password"
@@ -66,10 +96,9 @@ const SingFrom = () => {
           <div className="flex items-center mb-4">
           </div>
           <div onClick={handleSubmit}>
-            <ButtonComponent
-            buttonText="Sing-up "
-            bgColor="bg-blue-500"
-            />
+          <button className="bg-blue-700 h-10 w-30 rounded-xl">
+              Sign Up
+            </button>
           </div>
        
         </div>
