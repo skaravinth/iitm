@@ -1,19 +1,36 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import InputField from "../../Components/inputfield/inputField";
 import ButtonComponent from "../../Components/Button/button";
 import Dog from '../../assets/image.png'
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [remember, setRemember] = useState(false);
 
-  const handleSubmit = (e) => {
-    console.log(password)
-    console.log(email)
+  const handleSubmit = async (e) => {
+    console.log("hi");
     e.preventDefault();
-    console.log({ email, password, remember });
+    setError(null);
+
+    try {
+      const response = await axios.post("http://localhost:3000/login", {
+        email,
+        password,
+      });
+
+      console.log("Login successful:", response.data);
+      alert("Login successful");
+      navigate("/dashboard");
+      localStorage.setItem("userData", JSON.stringify(response.data));
+    } catch (error) {
+      console.error("Login error:", error.response?.data?.error || error.message);
+      setError(error.response?.data?.error || "Something went wrong");
+    }
   };
 
 const navigate = useNavigate()
@@ -33,8 +50,8 @@ const navigate = useNavigate()
               placeholder="Enter your email"
               value={email}
               isRequired={true} 
+              className="w-70"
               customPlaceholderStyle="bg-transparent outline-none"
-              type="email"
               inputOnChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -45,9 +62,8 @@ const navigate = useNavigate()
               id="password"
               placeholder="Enter your password"
               value={password}
-              className=""
+              className="w-70"
                customPlaceholderStyle="bg-transparent outline-none"
-              isRequired={true}  
               type="password"
               inputOnChange={(e) => setPassword(e.target.value)}
             />
@@ -55,10 +71,9 @@ const navigate = useNavigate()
           <div className="flex items-center mb-4">
           </div>
           <div onClick={handleSubmit}>
-            <ButtonComponent
-            buttonText="Log in"
-            bgColor="bg-blue-500"
-            />
+            <button className="bg-blue-700 h-10 w-30 rounded-xl">
+              Login
+            </button>
           </div>
         <div className="text-center mt-4">
           Don't have an account?

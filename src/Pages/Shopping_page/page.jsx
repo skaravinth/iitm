@@ -1,30 +1,32 @@
 import React from 'react';
 import { Search, Filter, Heart, ShoppingCart, Award, Truck, Shield, CreditCard, Star, ChevronDown } from 'lucide-react';
+import Dog1 from "../../assets/Dog1.jpg"
+import Dog2 from "../../assets/Dog2.jpg"
+import Dog3 from "../../assets/Dog3.webp"
+import Dog4 from "../../assets/Dog4.jpg"
 
 const Page = () => {
  
     const bestSellers = [
-        { id: 1, name: "Wireless Headphones", category: "Electronics", price: 99.99, imageUrl: "/api/placeholder/300/200" },
-        { id: 2, name: "Smart Watch", category: "Wearables", price: 199.99, imageUrl: "/api/placeholder/300/200" },
-        { id: 3, name: "Yoga Mat", category: "Fitness", price: 29.99, imageUrl: "/api/placeholder/300/200" },
-        { id: 4, name: "Coffee Maker", category: "Kitchen", price: 79.99, imageUrl: "/api/placeholder/300/200" },
-        { id: 5, name: "Bluetooth Speaker", category: "Audio", price: 59.99, imageUrl: "/api/placeholder/300/200" },
-        { id: 6, name: "Power Bank", category: "Accessories", price: 49.99, imageUrl: "/api/placeholder/300/200" },
-        { id: 7, name: "Fitness Tracker", category: "Wearables", price: 89.99, imageUrl: "/api/placeholder/300/200" },
-        { id: 8, name: "Portable Charger", category: "Electronics", price: 39.99, imageUrl: "/api/placeholder/300/200" }
+      { id: 1, name: "Premium Dog Food", category: "Foods", price: 99.99, imageUrl: Dog1 },
+      { id: 2, name: "Chewy Bone Treats", category: "Snacks", price: 199.99, imageUrl: Dog2 },
+      { id: 3, name: "Organic Dog Biscuits", category: "Food", price: 29.99, imageUrl: Dog3 },
+      { id: 4, name: "Chicken Jerky Sticks", category: "Treats", price: 79.99, imageUrl: Dog4 },
+      { id: 5, name: "Beef Flavored Kibble", category: "Food", price: 59.99, imageUrl: Dog1 },
+      { id: 6, name: "Soft Dog Chews", category: "Snacks", price: 49.99, imageUrl: Dog2 },
+      { id: 7, name: "Dental Chew Sticks", category: "Health", price: 89.99, imageUrl: Dog3 },
+      { id: 8, name: "Freeze-Dried Liver Bites", category: "Treats", price: 39.99, imageUrl: Dog4 }
+    
       ];
-
 
   return (
     <div className=" min-h-screen">
       <div className="container mx-auto px-4 py-8">
-        {/* Header Section */}
         <div className="mb-10 text-center">
           <h1 className="text-4xl font-bold text-gray-800 mb-2">Pawsome Shop</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">Premium products for your furry companions, carefully selected for quality and value</p>
         </div>
 
-        {/* Best Sellers Section */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-gray-800 flex items-center">
@@ -40,7 +42,7 @@ const Page = () => {
             {bestSellers.map(product => (
               <div key={product.id} className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 transform ">
                 <div className="relative">
-                  <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
+                  <img src={product.imageUrl} alt={product.name} className="w-full h-64 object-cover" />
                   
                 </div>
                 <div className="p-5">
